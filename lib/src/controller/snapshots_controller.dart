@@ -2,11 +2,12 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:snapshot_widget/snapshot_widget.dart';
+import 'package:snapshot_widget/src/extension/global_key_extension.dart';
+import 'package:snapshot_widget/src/utility/snapshots_utility.dart';
 
-class SnapshotController {
+class SnapshotsController {
   final GlobalKey _globalKey = GlobalKey();
-  final SnapshotUtility _snapshotUtility = ImageSnapshotUtility();
+  final SnapshotsUtility _snapshotUtility = ImageSnapshotsUtility();
 
   GlobalKey get key => _globalKey;
 

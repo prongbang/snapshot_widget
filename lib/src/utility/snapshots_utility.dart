@@ -9,12 +9,12 @@ import 'package:flutter/rendering.dart';
 ///   final imageSnapshotUtility = ImageSnapshotUtility();
 ///   final imageBytes = imageSnapshotUtility.toByteData(_globalKey.currentContext.findRenderObject(), pixelRatio: 16 / 9);
 ///
-abstract class SnapshotUtility {
+abstract class SnapshotsUtility {
   Future<Uint8List> toByteData(RenderRepaintBoundary request,
       {double pixelRatio});
 }
 
-class ImageSnapshotUtility implements SnapshotUtility {
+class ImageSnapshotsUtility implements SnapshotsUtility {
   @override
   Future<Uint8List> toByteData(RenderRepaintBoundary request,
       {double pixelRatio = 16 / 9}) async {

@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
-import 'package:snapshot_widget/snapshot_widget.dart';
+import 'package:snapshot_widget/snapshots_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _controller = SnapshotController();
+  final _controller = SnapshotsController();
   Uint8List _image = Uint8List.fromList([]);
 
   @override
@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
             children: [
               AspectRatio(
                 aspectRatio: 16 / 9,
-                child: SnapshotWidget(
+                child: SnapshotsWidget(
                   controller: _controller,
                   child: const SmartCardWidget(),
                 ),

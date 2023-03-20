@@ -9,9 +9,9 @@ A Flutter library to Snapshot Widget to Uint8List image.
 - Snapshot Widget
 
 ```dart
-final _controller = SnapshotController();
+final _controller = SnapshotsController();
 
-SnapshotWidget(
+SnapshotsWidget(
   controller: _controller,
   child: Container(),
 )
@@ -28,26 +28,26 @@ final imageBytes = await _controller.value(pixelRatio: 16 / 9);
 It is really easy to use! You should ensure that you add the `snapshot_widget` as a dependency in your flutter project.
 
 ```yaml
-snapshot_widget: "^1.0.0"
+snapshot_widget: "^1.0.1"
 ```
 
 ## Usage
 
 ```dart
 class _MyAppState extends State<MyApp> {
-  final _controller = SnapshotController();
+  final _controller = SnapshotsController();
   Uint8List _image = Uint8List.fromList([]);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SnapshotWidget(
+        SnapshotsWidget(
           controller: _controller,
           child: const SmartCardWidget(),
         ),
         OutlinedButton(
-          onPressed: _snapshotWidget,
+          onPressed: _SnapshotsWidget,
           child: const Text('Snapshot'),
         ),
         const Divider(),
@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  void _snapshotWidget() async {
+  void _SnapshotsWidget() async {
     final imageBytes = await _controller.value(pixelRatio: 16 / 9);
     setState(() {
       _image = imageBytes;
